@@ -1,0 +1,122 @@
+:root {
+  --o-green: #5b7258;
+  --o-sage: #8da989;
+  --o-cream: #f8f7ee;
+  --o-bg: #fdfdfb;
+}
+
+body {
+  background: var(--o-bg);
+}
+.navbar-toggler-icon {
+  filter: grayscale(1);
+}
+
+.glass-nav {
+  background: rgba(248, 247, 238, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(141, 169, 137, 0.12);
+}
+
+.page-pad {
+  padding-top: 140px;
+}
+
+.nav-link-ooo {
+  text-decoration: none;
+  color: var(--o-green);
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-link-ooo:hover {
+  background: rgba(141, 169, 137, 0.18);
+  color: var(--o-green);
+}
+.nav-link-ooo.active {
+  background: rgba(141, 169, 137, 0.35);
+  border: 1px solid rgba(141, 169, 137, 0.45);
+}
+.navbar-toggler-icon {
+  opacity: 0.9;
+}
+
+.btn-ooo {
+  background: var(--o-sage);
+  color: #fff !important;
+  font-weight: 900;
+  border-radius: 999px;
+  padding: 10px 18px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.btn-ooo:hover {
+  background: var(--o-green);
+}
+
+.card-soft {
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* itinerary custom accordion */
+.itin-item {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(141, 169, 137, 0.18);
+}
+.itin-head {
+  cursor: pointer;
+  user-select: none;
+  padding: 14px 16px;
+  background: #e9f1ea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.itin-title {
+  font-weight: 900;
+  color: var(--o-green);
+}
+.itin-sub {
+  font-weight: 800;
+  color: var(--o-green);
+  opacity: 0.9;
+}
+.itin-body {
+  display: none;
+  padding: 18px 18px 20px 18px;
+}
+.itin-body.show {
+  display: block;
+}
+.itin-body ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+.itin-body li {
+  margin-bottom: 10px;
+  color: var(--o-green);
+  font-weight: 700;
+}
+.itin-leftline {
+  border-left: 3px solid rgba(141, 169, 137, 0.55);
+  padding-left: 14px;
+}
+
+.chev {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.chev.up {
+  transform: rotate(180deg);
+}

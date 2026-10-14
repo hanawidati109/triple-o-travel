@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Triple O | Out Of Office</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .search-shadow {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      }
+      .bento-card {
+        position: relative;
+        border-radius: 2.5rem;
+        overflow: hidden;
+        border: none;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+      .bento-card img {
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .bento-card:hover img {
+        transform: scale(1.1);
+      }
+      .bento-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 2.5rem;
+        color: white;
+      }
+      .trip-card {
+        transition: all 0.4s ease;
+        border: none !important;
+        border-radius: 2.5rem !important;
+      }
+      .trip-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px -15px rgba(141, 169, 137, 0.3) !important;
+      }
+      .link-reset {
+        text-decoration: none;
+        color: inherit;
+      }
+      .link-reset:hover {
+        color: inherit;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased" data-page="home">
+    <!-- NAV -->
+    <nav class="glass-nav fixed-top w-100 z-50" style="z-index: 99999">
+      <div class="container-xl">
+        <!-- BAR TOP -->
+        <div class="d-flex align-items-center justify-content-between" style="height: 80px">
+          <!-- LOGO -->
+          <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <img src="img/logo.png" alt="Triple O Logo" style="height: 46px; width: auto; object-fit: contain" />
+            <div class="d-flex flex-column lh-1">
+              <span class="fs-4 fw-bolder tracking-tighter text-[#5B7258]" style="letter-spacing: -1px">Triple O</span>
+              <span class="fw-bold text-[#8DA989]" style="font-size: 9px; letter-spacing: 2.5px; margin-top: -2px">OUT OF OFFICE</span>
+            </div>
+          </a>
+
+          <!-- HAMBURGER (NO BACKGROUND) - MANUAL -->
+          <button class="btn d-lg-none p-2 border-0 shadow-none" type="button" id="oooToggler" aria-controls="oooNav" aria-expanded="false" aria-label="Toggle navigation" style="background: transparent">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B7258" stroke-width="2" stroke-linecap="round">
+              <path d="M4 7h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 17h16"></path>
+            </svg>
+          </button>
+
+          <!-- MENU DESKTOP -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <a data-nav="home" href="index.html" class="nav-link-ooo">Home</a>
+            <a data-nav="destinations" href="destinations.html" class="nav-link-ooo">Destinations</a>
+            <a data-nav="packages" href="packages.html" class="nav-link-ooo">Packages</a>
+            <a data-nav="about" href="about.html" class="nav-link-ooo">About Us</a>
+          </div>
+        </div>
+
+        <!-- MENU MOBILE (STAY) -->
+        <div class="d-lg-none pb-3" id="oooNav" style="display: none; position: relative; z-index: 99999">
+          <div class="d-flex flex-column gap-2">
+            <a data-nav="home" href="index.html" class="nav-link-ooo">Home</a>
+            <a data-nav="destinations" href="destinations.html" class="nav-link-ooo">Destinations</a>
+            <a data-nav="packages" href="packages.html" class="nav-link-ooo">Packages</a>
+            <a data-nav="about" href="about.html" class="nav-link-ooo">About Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative min-vh-100 d-flex align-items-center justify-content-center pt-5 overflow-hidden">
+      <div class="position-absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2000" class="w-100 h-100 object-cover scale-105" style="filter: brightness(0.7)" alt="Hero" />
+        <div class="position-absolute inset-0 bg-gradient-to-b from-black/40 to-[#fdfdfb]"></div>
+      </div>
+
+      <div class="position-relative z-10 text-center px-4" style="max-width: 900px">
+        <h1 class="display-3 fw-bolder text-white mb-4 tracking-tighter">Jelajahi Dunia,<br />Temukan <span class="text-[#CAD7B1]">Keajaiban.</span></h1>
+
+        <form id="heroSearchForm" class="bg-white p-2 p-md-3 rounded-5 d-flex flex-column flex-md-row gap-2 search-shadow mx-auto">
+          <div class="flex-grow-1 d-flex align-items-center px-4 gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#8DA989]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input id="heroCountry" type="text" placeholder="Cari negara tujuan (contoh: Japan)" class="form-control border-0 shadow-none fw-medium py-3" />
+          </div>
+          <button type="submit" class="btn" style="background: #5b7258; color: #fff; font-weight: 900; border-radius: 18px; padding: 14px 22px">Search Plan</button>
+        </form>
+
+        <div class="text-white-50 mt-3 small">Pilih negara → pilih paket → lihat itinerary lengkap.</div>
+      </div>
+    </section>
+
+    <!-- TRENDING DESTINATIONS (balik lagi) -->
+    <section class="container-xl py-5">
+      <div class="d-flex justify-content-between align-items-end mb-5">
+        <div>
+          <span class="text-[#8DA989] fw-bold text-uppercase small tracking-widest">Curated For You</span>
+          <h2 class="display-5 fw-extrabold text-[#5B7258] mt-2">Trending Destinations</h2>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <a class="link-reset" href="packages.html?country=Japan">
+            <div class="bento-card h-100" style="min-height: 500px">
+              <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=1600&q=80" alt="Japan" />
+              <div class="bento-overlay">
+                <span class="badge bg-[#8DA989] rounded-pill px-3 py-2 mb-3" style="width: fit-content">Most Visited</span>
+                <h3 class="display-5 fw-bold">Japan</h3>
+                <p class="opacity-75 fs-5">Sakura, Tokyo highlights, Kyoto culture.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row g-4 h-100">
+            <div class="col-12">
+              <a class="link-reset" href="packages.html?country=France">
+                <div class="bento-card" style="height: 240px">
+                  <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80" alt="France" />
+                  <div class="bento-overlay">
+                    <h3 class="h2 fw-bold">France</h3>
+                    <p class="small opacity-75">City lights & museums.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a class="link-reset" href="packages.html?country=UAE">
+                <div class="bento-card" style="height: 240px">
+                  <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80" alt="UAE" />
+                  <div class="bento-overlay"><h3 class="h4 fw-bold">UAE</h3></div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a class="link-reset" href="packages.html?country=Italy">
+                <div class="bento-card" style="height: 240px">
+                  <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1600&q=80" alt="Italy" />
+                  <div class="bento-overlay"><h3 class="h4 fw-bold">Italy</h3></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST SELLER / POPULAR PACKAGES -->
+    <section class="bg-[#F8F7EE] py-5">
+      <div class="container-xl py-5">
+        <div class="text-center mb-5">
+          <span class="text-[#8DA989] fw-bold text-uppercase tracking-widest small">Best Seller</span>
+          <h2 class="display-5 fw-extrabold text-[#5B7258] mt-2">Popular Packages</h2>
+          <p class="text-muted mx-auto" style="max-width: 600px">Paket pilihan dari destinasi populer dunia.</p>
+        </div>
+
+        <div class="row g-4" id="homePackageGrid"></div>
+
+        <div class="text-center mt-4">
+          <a href="packages.html" class="btn btn-ooo px-5 py-3">View All Packages</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-5 text-center text-muted border-top">
+      <p class="mb-0">&copy; 2024 Triple O - Out Of Office. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/trips.js"></script>
+    <script>
+      document.getElementById("heroSearchForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const country = (document.getElementById("heroCountry").value || "").trim();
+        if (!country) return;
+        window.location.href = `packages.html?country=${encodeURIComponent(country)}`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <title>About Us | Triple O</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased" data-page="about">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="glass-nav fixed-top w-100 z-50" style="z-index: 99999">
+      <div class="container-xl">
+        <div
+          class="d-flex align-items-center justify-content-between"
+          style="height: 80px"
+        >
+          <!-- LOGO -->
+          <a
+            href="index.html"
+            class="d-flex align-items-center gap-2 text-decoration-none"
+          >
+            <img
+              src="img/logo.png"
+              alt="Triple O Logo"
+              style="height: 46px; width: auto; object-fit: contain"
+            />
+            <div class="d-flex flex-column lh-1">
+              <span
+                class="fs-4 fw-bolder text-[#5B7258]"
+                style="letter-spacing: -1px"
+                >Triple O</span
+              >
+              <span
+                class="fw-bold text-[#8DA989]"
+                style="font-size: 9px; letter-spacing: 2.5px; margin-top: -2px"
+                >OUT OF OFFICE</span
+              >
+            </div>
+          </a>
+
+          <!-- HAMBURGER -->
+          <button
+            class="btn d-lg-none p-2 border-0 shadow-none"
+            type="button"
+            id="oooToggler"
+            style="background: transparent"
+          >
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#5B7258"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M4 7h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 17h16"></path>
+            </svg>
+          </button>
+
+          <!-- MENU DESKTOP -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <a href="index.html" class="nav-link-ooo">Home</a>
+            <a href="destinations.html" class="nav-link-ooo">Destinations</a>
+            <a href="packages.html" class="nav-link-ooo">Packages</a>
+            <a href="about.html" class="nav-link-ooo active">About Us</a>
+          </div>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div class="d-lg-none pb-3" id="oooNav" style="display: none">
+          <div class="d-flex flex-column gap-2">
+            <a href="index.html" class="nav-link-ooo">Home</a>
+            <a href="destinations.html" class="nav-link-ooo">Destinations</a>
+            <a href="packages.html" class="nav-link-ooo">Packages</a>
+            <a href="about.html" class="nav-link-ooo active">About Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+    <main class="container-xl page-pad">
+      <!-- HERO -->
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="text-[#8DA989] fw-bold text-uppercase"
+            >Who We Are</span
+          >
+          <h1 class="display-5 fw-extrabold text-[#5B7258] mt-2">
+          Jelajahi destinasi impianmu untuk eksplorasi tanpa batas
+          </h1>
+          <p class="text-muted fs-5 mt-3">
+            Triple O (Out Of Office) adalah platform perjalanan internasional
+            dengan rencana harian terstruktur, fasilitas nyaman, serta 
+            tour guide yang membantu komunikasi (translator).
+          </p>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a
+              href="destinations.html"
+              class="btn"
+              style="
+                background: #5b7258;
+                color: #fff;
+                font-weight: 900;
+                border-radius: 999px;
+                padding: 14px 22px;
+              "
+              >Destinations</a
+            >
+            <a
+              href="packages.html"
+              class="btn btn-ooo"
+              style="padding: 14px 22px"
+              >Packages</a
+            >
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card card-soft overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80"
+              alt="About"
+              class="w-100"
+              style="height: 420px; object-fit: cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURES -->
+      <section class="mt-5">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card card-soft p-4 h-100">
+              <div class="fw-extrabold text-[#5B7258] h4 mb-2">
+                Curated Routes
+              </div>
+              <p class="text-muted mb-0">
+                Rute populer dunia yang masuk akal untuk waktu & budget.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-soft p-4 h-100">
+              <div class="fw-extrabold text-[#5B7258] h4 mb-2">
+                Stay Included
+              </div>
+              <p class="text-muted mb-0">
+                Hotel/villa/penginapan sesuai paket, sudah included.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-soft p-4 h-100">
+              <div class="fw-extrabold text-[#5B7258] h4 mb-2">
+                Guide + Translator
+              </div>
+              <p class="text-muted mb-0">
+                Guide membantu arah dan komunikasi (Female/Male).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section class="mt-5">
+        <div class="card card-soft p-4 text-center">
+          <h4 class="fw-extrabold text-[#5B7258] mb-3">
+            Connect With Us
+          </h4>
+
+          <div
+            class="d-flex justify-content-center gap-4 flex-wrap"
+          >
+            <!-- WhatsApp -->
+            <a
+  href="https://wa.me/6281247147676?text=Halo%20Triple%20O,%0ASaya%20ingin%20bertanya%20mengenai%20reservasi%20trip."
+  target="_blank"
+  class="text-decoration-none d-flex align-items-center gap-2 text-[#5B7258] fw-semibold"
+>
+  <i class="bi bi-whatsapp fs-4"></i>
+  WhatsApp
+</a>
+
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/saalma.nr?igsh=Njk4bGw1Y2NyanY2"
+              target="_blank"
+              class="text-decoration-none d-flex align-items-center gap-2 text-[#5B7258] fw-semibold"
+            >
+              <i class="bi bi-instagram fs-4"></i>
+              Instagram
+            </a>
+
+            <!-- TikTok -->
+            <a
+              href="https://www.tiktok.com/@purple_girl.109?_r=1&_t=ZS-92jQzIOIj1c"
+              target="_blank"
+              class="text-decoration-none d-flex align-items-center gap-2 text-[#5B7258] fw-semibold"
+            >
+              <i class="bi bi-tiktok fs-4"></i>
+              TikTok
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer
+        class="py-5 text-center text-muted border-top mt-5"
+      >
+        <p class="mb-0">
+          &copy; 2024 Triple O - Out Of Office. All rights reserved.
+        </p>
+      </footer>
+    </main>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/trips.js"></script>
+  </body>
+</html>
